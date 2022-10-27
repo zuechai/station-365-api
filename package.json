@@ -4,6 +4,7 @@
   "description": "THIS IS THE APP FOLDER, CLIENT LINK TO BE ADDED",
   "main": "server.js",
   "scripts": {
+    "start": "nodemon start",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
