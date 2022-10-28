@@ -4,7 +4,7 @@
     "name": "Anthony Zuech",
     "position": "Web Developer",
     "team": "Station 365",
-    "ticketsSubmitted": [1, 2],
+    "ticketsSubmitted": ["1", "2", "11"],
     "ticketsResolved": [],
     "ownTicketsResolved": []
   },
@@ -13,7 +13,7 @@
     "name": "Miles Rousseau",
     "position": "Data Scientist",
     "team": "Station 365",
-    "ticketsSubmitted": [3, 4],
+    "ticketsSubmitted": ["3", "4"],
     "ticketsResolved": [],
     "ownTicketsResolved": []
   },
@@ -22,7 +22,7 @@
     "name": "Neil Cruz",
     "position": "Web Developer",
     "team": "Station 365",
-    "ticketsSubmitted": [5, 6],
+    "ticketsSubmitted": ["5", "6"],
     "ticketsResolved": [],
     "ownTicketsResolved": []
   },
@@ -31,7 +31,7 @@
     "name": "Cole Boyce",
     "position": "UX Designer",
     "team": "Station 365",
-    "ticketsSubmitted": [7, 8],
+    "ticketsSubmitted": ["7", "8"],
     "ticketsResolved": [],
     "ownTicketsResolved": []
   },
@@ -40,7 +40,7 @@
     "name": "Richy Hidalgo",
     "position": "UX Designer",
     "team": "Station 365",
-    "ticketsSubmitted": [9, 10],
+    "ticketsSubmitted": ["9", "10"],
     "ticketsResolved": [],
     "ownTicketsResolved": []
   }
