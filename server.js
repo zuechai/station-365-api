@@ -8,9 +8,11 @@ app.use(cors());
 app.use(express.json());
 app.use("/static", express.static("public"));
 
-const exampleRoute = require("./routes/exampleRoute");
+const usersRoute = require("./routes/usersRoute");
+const ticketsRoute = require("./routes/ticketsRoute");
 
-app.use("/example", exampleRoute);
+app.use("/users", usersRoute);
+app.use("/tickets", ticketsRoute);
 
 app.get("/", (req, res) => {
   console.log("Welcome! I am, but a useless server. Give me purpose!");
