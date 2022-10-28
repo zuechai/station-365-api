@@ -1,0 +1,47 @@
+[
+  {
+    "id": "a61f51sd31f13asfsa34fas3113",
+    "name": "Anthony Zuech",
+    "position": "Web Developer",
+    "team": "Station 365",
+    "ticketsSubmitted": 1,
+    "ticketsResolved": 2,
+    "ownTicketsResolved": 0
+  },
+  {
+    "id": "1617bagr617bgra176bgra671dv",
+    "name": "Miles Rousseau",
+    "position": "Data Scientist",
+    "team": "Station 365",
+    "ticketsSubmitted": 2,
+    "ticketsResolved": 3,
+    "ownTicketsResolved": 1
+  },
+  {
+    "id": "8651sdsgewaa8wv153asvd368bf",
+    "name": "Neil Cruz",
+    "position": "Web Developer",
+    "team": "Station 365",
+    "ticketsSubmitted": 1,
+    "ticketsResolved": 4,
+    "ownTicketsResolved": 0
+  },
+  {
+    "id": "16ergqra8uinyukuikui313684y",
+    "name": "Cole Boyce",
+    "position": "UX Designer",
+    "team": "Station 365",
+    "ticketsSubmitted": 2,
+    "ticketsResolved": 3,
+    "ownTicketsResolved": 2
+  },
+  {
+    "id": "ac651rewg68r12grae64fbfe51",
+    "name": "Richy Hidalgo",
+    "position": "UX Designer",
+    "team": "Station 365",
+    "ticketsSubmitted": 3,
+    "ticketsResolved": 2,
+    "ownTicketsResolved": 3
+  }
+]
