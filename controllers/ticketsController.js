@@ -24,7 +24,7 @@ const getAllTickets = (_req, res) => {
 
 const getUserTickets = (req, res) => {
   const { id: userId } = req.params;
-  const userTickets = tickets.filter((ticket) => ticket.submittedBy === userId);
+  const userTickets = tickets.filter((ticket) => ticket.employee === "Anthony");
   res.json(userTickets);
   return;
 };
