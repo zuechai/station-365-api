@@ -5,6 +5,7 @@ const {
   getUnresolvedTickets,
   getSingleTicket,
   getAllTickets,
+  getUserTickets,
   createTicket,
   editTicket,
 } = require("../controllers/ticketsController");
@@ -15,11 +16,13 @@ router.get("/", getUnresolvedTickets);
 // no body required
 router.get("/all", getAllTickets);
 
+router.get("/all/:id", getUserTickets);
+
 // no body required, just the id from req.params.id
 router.get("/:id", getSingleTicket);
 
 // body with all properties filled and req.params.id required
-router.put("/", createTicket);
+router.post("/", createTicket);
 
 // body with properties for votesFor, votesAgainst, and/or isResolved required
 router.patch("/:id", editTicket);

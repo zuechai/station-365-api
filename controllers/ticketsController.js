@@ -22,6 +22,13 @@ const getAllTickets = (_req, res) => {
   res.json(tickets);
 };
 
+const getUserTickets = (req, res) => {
+  const { id: userId } = req.params;
+  const userTickets = tickets.filter((ticket) => ticket.submittedBy === userId);
+  res.json(userTickets);
+  return;
+};
+
 // get a single ticket
 const getSingleTicket = (req, res) => {
   const { id } = req.params;
@@ -40,7 +47,7 @@ const getSingleTicket = (req, res) => {
 const createTicket = (req, res) => {
   const { body } = req;
 
-  if (Object.keys(body).length !== 6) {
+  if (!Object.keys(body).length) {
     res.status(400).send("Body must include include all properties, but ID");
     return;
   }
@@ -100,6 +107,7 @@ const editTicket = (req, res) => {
 module.exports = {
   getUnresolvedTickets,
   getAllTickets,
+  getUserTickets,
   getSingleTicket,
   createTicket,
   editTicket,
