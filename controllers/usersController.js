@@ -42,7 +42,10 @@ const editUser = (req, res) => {
   }
 
   if (ticketsSubmitted) {
-    foundUser.ticketsSubmitted = ticketsSubmitted;
+    foundUser.ticketsSubmitted = [
+      ...foundUser.ticketsSubmitted,
+      ticketsSubmitted,
+    ];
     updatedUsers = replaceUser(users, foundUser);
     fs.writeFileSync(usersJsonPath, JSON.stringify(updatedUsers));
     res.json(foundUser);
@@ -50,7 +53,10 @@ const editUser = (req, res) => {
   }
 
   if (ticketsResolved) {
-    foundUser.ticketsResolved = ticketsResolved;
+    foundUser.ticketsResolved = [
+      ...foundUser.ticketsResolved,
+      ticketsSubmitted,
+    ];
     updatedUsers = replaceUser(users, foundUser);
     fs.writeFileSync(usersJsonPath, JSON.stringify(updatedUsers));
     res.json(foundUser);
@@ -58,7 +64,11 @@ const editUser = (req, res) => {
   }
 
   if (ownTicketsResolved) {
-    foundUser.ownTicketsResolved = ownTicketsResolved;
+    foundUser.ownTicketsResolved = [
+      ...foundUser.ownTicketsResolved,
+      ownTicketsResolved,
+    ];
+
     updatedUsers = replaceUser(users, foundUser);
     fs.writeFileSync(usersJsonPath, JSON.stringify(updatedUsers));
     res.json(foundUser);

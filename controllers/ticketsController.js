@@ -19,7 +19,7 @@ const getUnresolvedTickets = (_req, res) => {
 
 // get all tickets resolved and unresolved
 const getAllTickets = (_req, res) => {
-  res.json(unresolvedTickets);
+  res.json(tickets);
 };
 
 // get a single ticket
@@ -39,14 +39,16 @@ const getSingleTicket = (req, res) => {
 // createTicket
 const createTicket = (req, res) => {
   const { body } = req;
-  const { id } = req.params;
 
   if (Object.keys(body).length !== 6) {
     res.status(400).send("Body must include include all properties, but ID");
     return;
   }
+
   const newTicket = { id: uuid(), ...body };
+
   updatedTickets = [...tickets, newTicket];
+
   fs.writeFileSync(ticketsJsonPath, JSON.stringify(updatedTickets));
   res.json(updatedTickets);
   return;
@@ -55,20 +57,34 @@ const createTicket = (req, res) => {
 // edit tickets
 const editTicket = (req, res) => {
   const { body } = req;
+  const { id } = req.params;
+
   if (!Object.keys(body).length) {
     res.status(400).send("Must include a body to edit the ticket item");
     return;
   }
 
-  const { id } = req.params;
   const { votesFor, votesAgainst, isResolved } = body;
   const foundTicket = findSingleTicket(tickets, id);
+
   if (votesFor) {
-    if (!idExists(votesFor)) foundTicket.votesFor = votesFor;
+    if (!idExists(foundTicket.votesFor)) {
+      foundTicket.votesFor = [...foundTicket.votesFor, votesFor];
+    } else {
+      res.status(400).send("ID already exist in the array");
+      return;
+    }
   }
+
   if (votesAgainst) {
-    foundTicket.votesAgainst = votesAgainst;
+    if (!idExists(foundTicket.votesAgainst)) {
+      foundTicket.votesAgainst = [...foundTicket.votesAgainst, votesAgainst];
+    } else {
+      res.status(400).send("ID already exist in the array");
+      return;
+    }
   }
+
   if (isResolved) {
     foundTicket.isResolved = true;
   }

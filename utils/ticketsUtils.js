@@ -13,4 +13,12 @@ const replaceTicket = (ticketsArray, foundticket) => {
 const filterTickets = (ticketsArray, isResolved) =>
   ticketsArray.filter((ticket) => isResolved === ticket.isResolved);
 
-module.exports = { findSingleTicket, replaceTicket, filterTickets };
+const idExists = (array, id) => {
+  const foundId = array.find((item) => item.id === id);
+  if (foundId) {
+    return true;
+  }
+  return false;
+};
+
+module.exports = { findSingleTicket, replaceTicket, filterTickets, idExists };
